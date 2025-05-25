@@ -84,7 +84,7 @@ class MQTT3Service(
                 val offlineMessage =
                     Mqtt3Publish.builder().topic("${it.getBaseTopic()}${CONNECTION}")
                         .payload(OFFLINE.toByteArray()).retain(true).build()
-                sendMessage(offlineMessage)
+                // sendMessage(offlineMessage)
             }
 
             mqtt3AsyncClient = null
@@ -187,10 +187,10 @@ class MQTT3Service(
                 mqtt3AsyncClient = mqttBuilder.useMqttVersion3().build().toAsync()
                 val clientConnect = mqtt3AsyncClient!!.connectWith()
                 clientConnect.cleanSession(false)
-                clientConnect.willPublish().topic("${mqttOptions.getBaseTopic()}${CONNECTION}")
-                    .payload(OFFLINE.toByteArray()).qos(
-                    MqttQos.EXACTLY_ONCE
-                ).retain(true).applyWillPublish()
+                // clientConnect.willPublish().topic("${mqttOptions.getBaseTopic()}${CONNECTION}")
+                //     .payload(OFFLINE.toByteArray()).qos(
+                //     MqttQos.EXACTLY_ONCE
+                // ).retain(true).applyWillPublish()
                 if (!TextUtils.isEmpty(mqttOptions.getUsername()) && !TextUtils.isEmpty(mqttOptions.getPassword())) {
                     clientConnect.simpleAuth().username(mqttOptions.getUsername())
                         .password(mqttOptions.getPassword().toByteArray()).applySimpleAuth()
