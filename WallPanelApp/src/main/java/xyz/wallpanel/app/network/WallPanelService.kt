@@ -365,7 +365,7 @@ class WallPanelService : LifecycleService(), MQTTModule.MQTTListener {
             }
             if (!mqttConnecting) {
                 reconnectHandler.removeCallbacksAndMessages(null)
-                reconnectHandler.postDelayed(restartMqttRunnable, 30000)
+                reconnectHandler.postDelayed(restartMqttRunnable, 300000)
                 mqttConnecting = true
             }
         }

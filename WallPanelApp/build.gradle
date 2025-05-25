@@ -105,7 +105,7 @@ android {
             buildConfigField "String", BASE_ENVIRONMENT, '"DEV_ENVIRONMENT"'
             applicationId "xyz.wallpanel.app"
             versionName "${versionMajor}.${versionMinor}.${versionPatch} Build ${versionBuild}-DEV"
-            buildConfigField 'Integer', 'CODE', CODE()
+//            buildConfigField 'Integer', 'CODE', CODE()
             buildConfigField 'String', 'HASS_URL', "\"" + HASS_URL() +"\""
             buildConfigField 'String', 'BROKER', "\"" + BROKER() +"\""
             buildConfigField 'String', 'BROKER_PASS', "\"" + BROKER_PASS() +"\""
