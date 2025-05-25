@@ -88,7 +88,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
     }
     buildFeatures {
@@ -104,7 +103,7 @@ android {
             buildConfigField "String", BASE_ENVIRONMENT, '"DEV_ENVIRONMENT"'
             applicationId "xyz.wallpanel.app"
             versionName "${versionMajor}.${versionMinor}.${versionPatch} Build ${versionBuild}-DEV"
-//            buildConfigField 'Integer', 'CODE', CODE()
+            buildConfigField 'Integer', 'CODE', '0000'
             buildConfigField 'String', 'HASS_URL', "\"" + HASS_URL() +"\""
             buildConfigField 'String', 'BROKER', "\"" + BROKER() +"\""
             buildConfigField 'String', 'BROKER_PASS', "\"" + BROKER_PASS() +"\""

@@ -43,4 +43,4 @@ google-services.json
 keystore.gradle
 
 #other
-WallPanelApp/
+WallPanelApp/prod
